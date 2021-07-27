@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="C" height="1200" width="2380" style="background: lightyellow"></canvas>
+
+<script type="text/javascript">
+    var c=document.getElementById("C");
+    var ctx=c.getContext('2d');
+    var i=0;
+    var j=1;
+    var l=new Array();
+    l[0] = 'red';
+    l[1] = 'green';
+    l[2] = 'blue';
+
+    function d5line(x0, y0){
+        // dBlackLine(x0+15, y0+40, x0+15, y0+100);
+        // dBlackLine(x0+30, y0+40, x0+30, y0+100);
+        // dBlackLine(x0+40, y0+10, x0+100+15, y0+10);
+        // dBlackLine(x0+40, y0+20, x0+100+30, y0+20);
+        // dBlackLine(x0+40, y0+30, x0+100+45, y0+30);
+        dBlackLine(x0+100+15, y0-60+50, x0+100+15, y0+100);
+        dBlackLine(x0+100+30, y0-60+50, x0+100+30, y0+120);
+        dBlackLine(x0+100+45, y0-60+50, x0+100+45, y0+140);
+    }
+
+    function  d5LineAll(){
+        d5line(570,100);
+        d5line(470,340);
+        d5line(1220,340);
+        d5line(1970,340);
+        d5line(250,600);
+        d5line(1030,600);
+        d5line(1810,600);
+    }
+
+    function dBlackLine(x1,y1,x2,y2){
+        // alert(x1)
+        ctx.strokeStyle='black';
+        ctx.lineWidth=1;
+        ctx.beginPath();
+        ctx.moveTo(x1,y1);
+        ctx.lineTo(x2,y2);
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+    // 绘制刻度
+    function dkedu(){
+        dBlackLine(0,50,50,50);
+        dBlackLine(0,100,50,100);
+        dBlackLine(0,150,50,150);
+        dBlackLine(0,200,50,200);
+        dBlackLine(0,250,50,250);
+        dBlackLine(0,300,50,300);
+        dBlackLine(0,350,50,350);
+        dBlackLine(0,400,50,400);
+        dBlackLine(0,450,50,450);
+        dBlackLine(0,500,50,500);
+        dBlackLine(0,550,50,550);
+        dBlackLine(0,600,50,600);
+        dBlackLine(0,650,50,650);
+        dBlackLine(0,700,50,700);
+        dBlackLine(0,750,50,750);
+        dBlackLine(0,800,50,800);
+        dBlackLine(0,850,50,850);
+        dBlackLine(0,900,50,900);
+        dBlackLine(0,950,50,950);
+        dBlackLine(0,1000,50,1000);
+        dBlackLine(0,1050,50,1050);
+        dBlackLine(0,1100,50,1100);
+        dBlackLine(0,1150,50,1150);
+        dBlackLine(50,0,50,50);
+        dBlackLine(100,0,100,50);
+        dBlackLine(150,0,150,50);
+        dBlackLine(200,0,200,50);
+        dBlackLine(250,0,250,50);
+        dBlackLine(300,0,300,50);
+        dBlackLine(350,0,350,50);
+        dBlackLine(400,0,400,50);
+        dBlackLine(450,0,450,50);
+        dBlackLine(500,0,500,50);
+        dBlackLine(550,0,550,50);
+        dBlackLine(600,0,600,50);
+        dBlackLine(650,0,650,50);
+        dBlackLine(700,0,700,50);
+        dBlackLine(750,0,750,50);
+        dBlackLine(800,0,800,50);
+        dBlackLine(850,0,850,50);
+        dBlackLine(900,0,900,50);
+        dBlackLine(950,0,950,50);
+        dBlackLine(1000,0,1000,50);
+        dBlackLine(1050,0,1050,50);
+        dBlackLine(1100,0,1100,50);
+        dBlackLine(1150,0,1150,50);
+        dBlackLine(1200,0,1200,50);
+        dBlackLine(1250,0,1250,50);
+        dBlackLine(1300,0,1300,50);
+        dBlackLine(1350,0,1350,50);
+        dBlackLine(1400,0,1400,50);
+        dBlackLine(1450,0,1450,50);
+        dBlackLine(1500,0,1500,50);
+        dBlackLine(1550,0,1550,50);
+        dBlackLine(1600,0,1600,50);
+        dBlackLine(1650,0,1650,50);
+        dBlackLine(1700,0,1700,50);
+        dBlackLine(1750,0,1750,50);
+        dBlackLine(1800,0,1800,50);
+        dBlackLine(1850,0,1850,50);
+        dBlackLine(1900,0,1900,50);
+        dBlackLine(1950,0,1950,50);
+        dBlackLine(2000,0,2000,50);
+        dBlackLine(2050,0,2050,50);
+        dBlackLine(2100,0,2100,50);
+        dBlackLine(2150,0,2150,50);
+        dBlackLine(2200,0,2200,50);
+        dBlackLine(2250,0,2250,50);
+        dBlackLine(2300,0,2300,50);
+        dBlackLine(2350,0,2350,50);
+    }
+
+    function dRect(){
+        // a-1
+        ctx.strokeRect(570,100,40,40);
+        ctx.strokeRect(670,50-10,50,50);
+
+        // a-2
+        ctx.strokeRect(470,320+20,40,40);
+        ctx.strokeRect(570,280-20+20,50,50);
+
+        // a-3
+        ctx.strokeRect(1220,320+20,40,40);
+        ctx.strokeRect(1320,280-20+20,50,50);
+
+        // a-4
+        ctx.strokeRect(1970,320+20,40,40);
+        ctx.strokeRect(2070,280-20+20,50,50);
+
+        // a-5
+        ctx.strokeRect(250,600,40,40);
+        ctx.strokeRect(350,560-20,50,50);
+
+        // a-6
+        ctx.strokeRect(1030,600,40,40);
+        ctx.strokeRect(1130,560-20,50,50);
+
+        // a-7
+        ctx.strokeRect(1810,600,40,40);
+        ctx.strokeRect(1910,560-20,50,50);
+
+        // rect1-1
+        ctx.fillStyle=l[j%3];
+        ctx.fillRect(100,995,30,30);
+        ctx.stroke();
+
+        // rect1-2
+        ctx.fillStyle=l[j%3];
+        ctx.fillRect(145,995,30,30);
+        ctx.stroke();
+
+        // rect1-3
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(190,995,30,30);
+        ctx.stroke();
+
+        // rect2-1
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(270,995,30,30);
+        ctx.stroke();
+
+        // rect 2-2
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(315,995,30,30);
+        ctx.stroke();
+
+        // rect 2-3
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(360,995,30,30);
+        ctx.stroke();
+
+        // rect 3-1
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(440,995,30,30);
+        ctx.stroke();
+
+        // rect 3-2
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(485,995,30,30);
+        ctx.stroke();
+
+        // rect 3-3
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(530,995,30,30);
+        ctx.stroke();
+
+
+        // rect 4-1
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(630,995,30,30);
+        ctx.stroke();
+
+        // rect 4-2
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(630+45,995,30,30);
+        ctx.stroke();
+
+        // rect 4-3
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(630+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 5-1
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(870,995,30,30);
+        ctx.stroke();
+
+        // rect 5-2
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(870+45,995,30,30);
+        ctx.stroke();
+
+        // rect 5-3
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(870+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 6
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1040,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1040+45,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1040+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 7
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1210,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1210+45,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1210+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 8
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1380,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1380+45,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1380+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 9
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1660,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1660+45,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1660+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 10
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1830,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1830+45,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(1830+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 11
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(2000,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(2000+45,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(2000+45*2,995,30,30);
+        ctx.stroke();
+
+        // rect 12
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(2170,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(2170+45,995,30,30);
+        ctx.stroke();
+        ctx.fillStyle=l[j%3]
+        ctx.fillRect(2170+45*2,995,30,30);
+        ctx.stroke();
+    }
+
+    function dHeng(){
+        // strokeStyle开头，stroke结尾，其中的线条是一个风格
+        // ctx.strokeStyle='black';
+        // ctx.lineWidth=1;
+        // ctx.beginPath();
+        // 横(1,1)
+        dBlackLine(100,200,2300,200)
+        // ctx.moveTo(100,200);
+        // ctx.lineTo(2300,200);
+        dBlackLine(100,220,2300,220)
+        ctx.moveTo(100,220);
+        ctx.lineTo(2300,220);
+        dBlackLine(100,240,2300,240)
+        // ctx.moveTo(100,240);
+        // ctx.lineTo(2300,240);
+        // ctx.closePath();
+        // ctx.stroke()
+
+        // 横(2,1)
+        dBlackLine(190,440,820,440);
+        // ctx.moveTo(190,440);
+        // ctx.lineTo(820,440);
+        dBlackLine(190,460,820,460);
+        // ctx.moveTo(190,460);
+        // ctx.lineTo(820,460);
+        dBlackLine(190,480,820,480);
+        // ctx.moveTo(190,480);
+        // ctx.lineTo(820,480);
+
+        // 横(2,2)
+        dBlackLine(940,440,1570,440);
+        // ctx.moveTo(940,440);
+        // ctx.lineTo(1570,440);
+        dBlackLine(940,460,1570,460);
+        // ctx.moveTo(940,460);
+        // ctx.lineTo(1570,460);
+        dBlackLine(940,480,1570,480);
+        // ctx.moveTo(940,480);
+        // ctx.lineTo(1570,480);
+
+        // 横(2,3)
+        dBlackLine(1690,440,2320,440);
+        // ctx.moveTo(1690,440);
+        // ctx.lineTo(2320,440);
+        dBlackLine(1690,460,2320,460);
+        // ctx.moveTo(1690,460);
+        // ctx.lineTo(2320,460);
+        dBlackLine(1690,480,2320,480);
+        // ctx.moveTo(1690,480);
+        // ctx.lineTo(2320,480);
+        // ctx.closePath();
+        // ctx.stroke()
+        // (3,1)
+        dBlackLine(100,700,770,700);
+        dBlackLine(100,720,770,720);
+        dBlackLine(100,740,770,740);
+
+        // (3,2)
+        dBlackLine(880,700,1550,700);
+        dBlackLine(880,720,1550,720);
+        dBlackLine(880,740,1550,740);
+
+        // (3,3)
+        dBlackLine(1660,700,2330,700);
+        dBlackLine(1660,720,2330,720);
+        dBlackLine(1660,740,2330,740);
+
+        // (4,1)
+        dBlackLine(100,860,220,860);
+        dBlackLine(100,875,220,875);
+        dBlackLine(100,890,220,890);
+
+        // (4,2)
+        dBlackLine(270,860,390,860);
+        dBlackLine(270,875,390,875);
+        dBlackLine(270,890,390,890);
+
+
+        // (4,3)
+        dBlackLine(440,860,560,860);
+        dBlackLine(440,875,560,875);
+        dBlackLine(440,890,560,890);
+
+        // (4,4)
+        dBlackLine(630,860,750,860);
+        dBlackLine(630,875,750,875);
+        dBlackLine(630,890,750,890);
+
+        // (4,5)
+        dBlackLine(870,860,990,860);
+        dBlackLine(870,875,990,875);
+        dBlackLine(870,890,990,890);
+
+        // (4,6)
+        dBlackLine(1040,860,1160,860);
+        dBlackLine(1040,875,1160,875);
+        dBlackLine(1040,890,1160,890);
+
+        // (4,7)
+        dBlackLine(1210,860,1330,860);
+        dBlackLine(1210,875,1330,875);
+        dBlackLine(1210,890,1330,890);
+
+        // (4,8)
+        dBlackLine(1380,860,1500,860);
+        dBlackLine(1380,875,1500,875);
+        dBlackLine(1380,890,1500,890);
+
+        // (4,9)
+        dBlackLine(1660,860,1780,860);
+        dBlackLine(1660,875,1780,875);
+        dBlackLine(1660,890,1780,890);
+
+        // (4,10)
+        dBlackLine(1830,860,1950,860);
+        dBlackLine(1830,875,1950,875);
+        dBlackLine(1830,890,1950,890);
+
+        // (4,11)
+        dBlackLine(2000,860,2120,860);
+        dBlackLine(2000,875,2120,875);
+        dBlackLine(2000,890,2120,890);
+
+        // (4,12)
+        dBlackLine(2170,860,2290,860);
+        dBlackLine(2170,875,2290,875);
+        dBlackLine(2170,890,2290,890);
+
+    }
+
+    function dShu(){
+        // rect 1-1
+        dBlackLine(105,860,105,995);
+        dBlackLine(105+8,860+15,105+8,995);
+        dBlackLine(105+8*2,860+15*2,105+8*2,995);
+
+        // rect 1-2
+        dBlackLine(105+45,860,105+45,995);
+        dBlackLine(105+8+45,860+15,105+8+45,995);
+        dBlackLine(105+8*2+45,860+15*2,105+8*2+45,995);
+
+        // rect 1-3
+        dBlackLine(105+45+45,860,105+45+45,995);
+        dBlackLine(105+8+45+45,860+15,105+8+45+45,995);
+        dBlackLine(105+8*2+45+45,860+15*2,105+8*2+45+45,995);
+
+        // rect 2-1
+        dBlackLine(275,860,275,995);
+        dBlackLine(275+8,860+15,275+8,995);
+        dBlackLine(275+8*2,860+15*2,275+8*2,995);
+
+        // rect 2-2
+        dBlackLine(275+45,860,275+45,995);
+        dBlackLine(275+8+45,860+15,275+8+45,995);
+        dBlackLine(275+8*2+45,860+15*2,275+8*2+45,995);
+
+        // rect 2-3
+        dBlackLine(275+45*2,860,275+45*2,995);
+        dBlackLine(275+8+45*2,860+15,275+8+45*2,995);
+        dBlackLine(275+8*2+45*2,860+15*2,275+8*2+45*2,995);
+
+        // rect 3-1
+        dBlackLine(275+170,860,275+170,995);
+        dBlackLine(275+8+170,860+15,275+8+170,995);
+        dBlackLine(275+8*2+170,860+15*2,275+8*2+170,995);
+
+        // rect 3-2
+        dBlackLine(275+45+170,860,275+45+170,995);
+        dBlackLine(275+8+45+170,860+15,275+8+45+170,995);
+        dBlackLine(275+8*2+45+170,860+15*2,275+8*2+45+170,995);
+
+        // rect 3-3
+        dBlackLine(275+45*2+170,860,275+45*2+170,995);
+        dBlackLine(275+8+45*2+170,860+15,275+8+45*2+170,995);
+        dBlackLine(275+8*2+45*2+170,860+15*2,275+8*2+45*2+170,995);
+
+        // rect 4-1
+        dBlackLine(275+360,860,275+360,995);
+        dBlackLine(275+8+360,860+15,275+8+360,995);
+        dBlackLine(275+8*2+360,860+15*2,275+8*2+360,995);
+
+        // rect 4-2
+        dBlackLine(275+45+360,860,275+45+360,995);
+        dBlackLine(275+8+45+360,860+15,275+8+45+360,995);
+        dBlackLine(275+8*2+45+360,860+15*2,275+8*2+45+360,995);
+
+        // rect 4-3
+        dBlackLine(275+45*2+360,860,275+45*2+360,995);
+        dBlackLine(275+8+45*2+360,860+15,275+8+45*2+360,995);
+        dBlackLine(275+8*2+45*2+360,860+15*2,275+8*2+45*2+360,995);
+
+        // rect 5-1
+        dBlackLine(635+240,860,635+240,995);
+        dBlackLine(643+240,875,643+240,995);
+        dBlackLine(651+240,890,651+240,995);
+
+        // rect 5-2
+        dBlackLine(635+240+45,860,635+240+45,995);
+        dBlackLine(643+240+45,875,643+240+45,995);
+        dBlackLine(651+240+45,890,651+240+45,995);
+
+        // rect 5-3
+        dBlackLine(635+240+90,860,635+240+90,995);
+        dBlackLine(643+240+90,875,643+240+90,995);
+        dBlackLine(651+240+90,890,651+240+90,995);
+
+        // 6-1
+        dBlackLine(635+240+170,860,635+240+170,995);
+        dBlackLine(643+240+170,875,643+240+170,995);
+        dBlackLine(651+240+170,890,651+240+170,995);
+
+        // 6-2
+        dBlackLine(635+240+45+170,860,635+240+45+170,995);
+        dBlackLine(643+240+45+170,875,643+240+45+170,995);
+        dBlackLine(651+240+45+170,890,651+240+45+170,995);
+
+        // 6-3
+        dBlackLine(635+240+90+170,860,635+240+90+170,995);
+        dBlackLine(643+240+90+170,875,643+240+90+170,995);
+        dBlackLine(651+240+90+170,890,651+240+90+170,995);
+
+        // 7-1
+        dBlackLine(635+240+340,860,635+240+340,995);
+        dBlackLine(643+240+340,875,643+240+340,995);
+        dBlackLine(651+240+340,890,651+240+340,995);
+
+        // 7-2
+        dBlackLine(635+240+340+45,860,635+240+340+45,995);
+        dBlackLine(643+240+340+45,875,643+240+340+45,995);
+        dBlackLine(651+240+340+45,890,651+240+340+45,995);
+
+        // 7-3
+        dBlackLine(635+240+340+90,860,635+240+340+90,995);
+        dBlackLine(643+240+340+90,875,643+240+340+90,995);
+        dBlackLine(651+240+340+90,890,651+240+340+90,995);
+
+        // 8-1
+        dBlackLine(635+240+510,860,635+240+510,995);
+        dBlackLine(643+240+510,875,643+240+510,995);
+        dBlackLine(651+240+510,890,651+240+510,995);
+
+        // 8-2
+        dBlackLine(635+240+510+45,860,635+240+510+45,995);
+        dBlackLine(643+240+510+45,875,643+240+510+45,995);
+        dBlackLine(651+240+510+45,890,651+240+510+45,995);
+
+        // 8-3
+        dBlackLine(635+240+510+90,860,635+240+510+90,995);
+        dBlackLine(643+240+510+90,875,643+240+510+90,995);
+        dBlackLine(651+240+510+90,890,651+240+510+90,995);
+
+        // 9-1
+        dBlackLine(1385+280,860,1385+280,995);
+        dBlackLine(1385+280+8,875,1385+280+8,995);
+        dBlackLine(1385+280+8*2,890,1385+280+8*2,995);
+
+        // 9-2
+        dBlackLine(1385+280+45,860,1385+280+45,995);
+        dBlackLine(1385+280+45+8,875,1385+280+45+8,995);
+        dBlackLine(1385+280+45+8*2,890,1385+280+45+8*2,995);
+
+        // 9-3
+        dBlackLine(1385+280+90,860,1385+280+90,995);
+        dBlackLine(1385+280+90+8,875,1385+280+90+8,995);
+        dBlackLine(1385+280+90+8*2,890,1385+280+90+8*2,995);
+
+        // 10-1
+        dBlackLine(1385+280+170,860,1385+280+170,995);
+        dBlackLine(1385+280+170+8,875,1385+280+170+8,995);
+        dBlackLine(1385+280+170+8*2,890,1385+280+170+8*2,995);
+
+        // 10-2
+        dBlackLine(1385+280+45+170,860,1385+280+45+170,995);
+        dBlackLine(1385+280+45+170+8,875,1385+280+45+170+8,995);
+        dBlackLine(1385+280+45+170+8*2,890,1385+280+45+170+8*2,995);
+
+        // 10-3
+        dBlackLine(1385+280+90+170,860,1385+280+90+170,995);
+        dBlackLine(1385+280+90+170+8,875,1385+280+90+170+8,995);
+        dBlackLine(1385+280+90+170+8*2,890,1385+280+90+170+8*2,995);
+
+        // 11-1
+        dBlackLine(1385+280+340,860,1385+280+340,995);
+        dBlackLine(1385+280+340+8,875,1385+280+340+8,995);
+        dBlackLine(1385+280+340+8*2,890,1385+280+340+8*2,995);
+
+        // 11-2
+        dBlackLine(1385+280+340+45,860,1385+280+340+45,995);
+        dBlackLine(1385+280+340+45+8,875,1385+280+340+45+8,995);
+        dBlackLine(1385+280+340+45+8*2,890,1385+280+340+45+8*2,995);
+
+        // 11-3
+        dBlackLine(1385+280+340+90,860,1385+280+340+90,995);
+        dBlackLine(1385+280+340+90+8,875,1385+280+340+90+8,995);
+        dBlackLine(1385+280+340+90+8*2,890,1385+280+340+90+8*2,995);
+
+        // 12-1
+        dBlackLine(1385+280+510,860,1385+280+510,995);
+        dBlackLine(1385+280+510+8,875,1385+280+510+8,995);
+        dBlackLine(1385+280+510+8*2,890,1385+280+510+8*2,995);
+
+        // 12-2
+        dBlackLine(1385+280+510+45,860,1385+280+510+45,995);
+        dBlackLine(1385+280+510+45+8,875,1385+280+510+45+8,995);
+        dBlackLine(1385+280+510+45+8*2,890,1385+280+510+45+8*2,995);
+
+        // 12-3
+        dBlackLine(1385+280+510+90,860,1385+280+510+90,995);
+        dBlackLine(1385+280+510+90+8,875,1385+280+510+90+8,995);
+        dBlackLine(1385+280+510+90+8*2,890,1385+280+510+90+8*2,995);
+
+    }
+
+
+    var myS = setInterval(function (){
+        // alert("33")
+        c.height = c.height;
+        ctx.translate(0.5,0.5);
+        ctx.lineWidth=0.5;
+        dkedu();
+        dRect();
+        dHeng();
+        dShu();
+        d5LineAll();
+        // dPd();
+
+
+        // endStroke
+        i++;
+        j++;
+    }, 1000);
+</script>
+</body>
+</html>
